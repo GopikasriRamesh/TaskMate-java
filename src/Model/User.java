@@ -8,9 +8,9 @@ public class User {
     private String name;
     private List<Task> tasks;
 
-    public User(String name,List<Task> tasks){
-        this.name=name;
-        this.tasks=new ArrayList<>();
+    public User(String name, List<Task> tasks){
+        this.name = name;
+        this.tasks = tasks != null ? tasks : new ArrayList<>();
     }
 
     public void addTask(Task task){
@@ -23,7 +23,7 @@ public class User {
 
     public List<Task> getPendingTasks(){
         return tasks.stream()
-                .filter(task->!task.isComplete())
+                .filter(task -> !task.isComplete())
                 .collect(Collectors.toList());
     }
 

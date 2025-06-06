@@ -14,7 +14,6 @@ public class Main {
         // Choose notification type
         System.out.println("Choose notification type (1 = Email, 2 = Popup):");
         int choice = Integer.parseInt(scanner.nextLine());
-
         NotificationService notificationService = (choice == 1)
                 ? new EmailNotificationService()
                 : new PopupNotificationService();
